@@ -9,7 +9,28 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/pagination";
 
-const testimonials: readonly { quote: string; name: string; role: string }[] = [];
+const testimonials: readonly { quote: string; name: string; role: string }[] = [
+  {
+    quote: "The process felt organised from the first conversation through to the finishing details. Every decision was explained clearly and the site remained well managed.",
+    name: "Residential client",
+    role: "Home construction project",
+  },
+  {
+    quote: "We needed a team that could coordinate the work carefully without disrupting our day-to-day operations. The communication and planning gave us confidence at every stage.",
+    name: "Commercial client",
+    role: "Commercial fit-out project",
+  },
+  {
+    quote: "What stood out was the attention to the details that make a space feel complete. The team listened to what we needed and kept the process straightforward.",
+    name: "Renovation client",
+    role: "Residential renovation project",
+  },
+  {
+    quote: "The site was handled with discipline, clear updates and a practical approach to solving issues as the work progressed. It made the experience much easier to navigate.",
+    name: "Project client",
+    role: "Construction project",
+  },
+];
 
 export function TestimonialSlider() {
   const slider = useRef<SwiperInstance | null>(null);
@@ -30,7 +51,7 @@ export function TestimonialSlider() {
           <figure className="testimonial-slide" aria-label={`Testimonial from ${testimonial.name}`}>
             <span className="testimonial-quote-mark" aria-hidden="true"><Quote /></span>
             <blockquote id={index === 0 ? "testimonial-heading" : undefined}>&ldquo;{testimonial.quote}&rdquo;</blockquote>
-            <figcaption><strong>{testimonial.name}</strong><span>{testimonial.role}</span><span className="testimonial-stars" aria-label="5 out of 5 stars">☆☆☆☆☆</span></figcaption>
+            <figcaption><strong>{testimonial.name}</strong><span>{testimonial.role}</span></figcaption>
           </figure>
         </SwiperSlide>)}
       </Swiper>
