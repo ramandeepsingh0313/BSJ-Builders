@@ -13,6 +13,11 @@
 # testing
 /coverage
 
+# Local visual QA captures
+/before-after-*.png
+/contact-*.png
+/docs/qa/
+
 # next.js
 /.next/
 /out/
